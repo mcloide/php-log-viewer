@@ -1,12 +1,26 @@
 <?php
 
-function cleanup($str) {
+/**
+ * Helper method to clean up the data coming in from the logs.
+ *
+ * @param string $str
+ * @return string
+ */
+function cleanup(string $str) : string {
     trim($str);
     $str = str_replace(['[',']'],'',$str);
     return $str;
 }
 
-function readLastLines($filename, $num, $reverse = false)
+/**
+ * Parser method to read the file in reverse and fill up the log lines.
+ * 
+ * @param string $filename
+ * @param int $num
+ * @param bool $reverse
+ * @return array
+ */
+function readLastLines(string $filename, int $num, bool $reverse = false) : array
 {
     $file = new \SplFileObject($filename, 'r');
     $file->seek($file->getSize());
@@ -91,18 +105,17 @@ function readLastLines($filename, $num, $reverse = false)
     return $return;
 }
 
-// use it by
-$lines = readLastLines("error.log", 1000, true);
+$lines = readLastLines("/var/www/html/logs/httpd-error.log", 1000, true);
 ?>
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Log Viewer">
+    <meta name="author" content="Cristiano Silva @mcloide">
 
-    <title>Development Environment Logs</title>
+    <title>Log Viewer</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
@@ -158,33 +171,6 @@ $lines = readLastLines("error.log", 1000, true);
                             Error Logs
                             </a>
                         </li>
-                        <li>
-                            <a href="deploy.php" class="nav-link link-dark">
-                            <i class="bi bi-code-slash"></i>
-                            Deploy Scripts Logs
-                            </a>
-                        </li>
-                        <li>
-                            <hr>
-                        </li>
-                        <li>
-                            <a href="http://deploy.dev.intakedesk.net" class="nav-link" target="__blank">
-                            <i class="bi bi-cloud-check"></i>
-                            Deploy Scripts
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://dev.intakedesk.net/update.php" class="nav-link" target="__blank">
-                            <i class="bi bi-ui-checks"></i>
-                            Enable Environment
-                            </a>
-                        </li>
-                        <!-- li>
-                            <a href="mysql.php" class="nav-link link-dark">
-                            <i class="bi bi-hdd"></i>
-                            MySQL Logs
-                            </a>
-                        </li -->
                     </ul>
                 </div>
             </div>
@@ -221,7 +207,7 @@ $lines = readLastLines("error.log", 1000, true);
 
         <footer>
             <hr>
-            <p>&copy; IntakeDesk 2024</p>
+            <p>&copy; Diniz Engineering Solutions 2024</p>
         </footer>
     </div>
     <!-- Bootstrap core JavaScript
