@@ -7,10 +7,10 @@ This project shows a simple way to visualize Apache, PHP and any other logs for 
 As it is known, a script can't simply access a log file that is under `/var/log` without proper permissions and, to ensure some security of the server, the best way to solve this issue is by making Apache to pipe 2 log files. To make this possible, edit your apache configuration and replace the current entries for these ones:
 
 ```bash
-	ErrorLog "|/usr/bin/tee -a /var/log/apache2/error.log /var/www/html/logs/httpd-error.log"
-	CustomLog ${APACHE_LOG_DIR}/access.log combined
-  # New access log
-  CustomLog /var/www/html/logs/httpd-access.log combined
+ErrorLog "|/usr/bin/tee -a /var/log/apache2/error.log /var/www/html/logs/httpd-error.log"
+CustomLog ${APACHE_LOG_DIR}/access.log combined
+# New access log
+CustomLog /var/www/html/logs/httpd-access.log combined
 ```
 
 If you have a custom log format, you can still use it, just use Apache's pipe process to write to more than one file.
