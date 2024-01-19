@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Log Viewer">
+    <meta name="author" content="Cristiano Silva @mcloide">
 
-    <title>Development Environment Logs</title>
+    <title>Log Viewer</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
@@ -64,33 +64,6 @@
                             Error Logs
                             </a>
                         </li>
-                        <li>
-                            <a href="deploy.php" class="nav-link link-dark">
-                            <i class="bi bi-code-slash"></i>
-                            Deploy Scripts Logs
-                            </a>
-                        </li>
-                        <li>
-                            <hr>
-                        </li>
-                        <li>
-                            <a href="http://deploy.dev.intakedesk.net" class="nav-link" target="__blank">
-                            <i class="bi bi-cloud-check"></i>
-                            Deploy Scripts
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://dev.intakedesk.net/update.php" class="nav-link" target="__blank">
-                            <i class="bi bi-ui-checks"></i>
-                            Enable Environment
-                            </a>
-                        </li>
-                        <!-- li>
-                            <a href="mysql.php" class="nav-link link-dark">
-                            <i class="bi bi-hdd"></i>
-                            MySQL Logs
-                            </a>
-                        </li -->
                     </ul>
                 </div>
             </div>
@@ -116,7 +89,7 @@
 
         <footer>
             <hr>
-            <p>&copy; IntakeDesk 2024</p>
+            <p>&copy; Diniz Engineering Solutions 2024</p>
         </footer>
     </div>
     <!-- Bootstrap core JavaScript
